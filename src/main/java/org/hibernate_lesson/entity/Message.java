@@ -1,13 +1,12 @@
-package org.hibernate.entity;
+package org.hibernate_lesson.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "message", schema = "public")
 public class Message {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String text;
 
