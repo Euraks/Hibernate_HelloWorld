@@ -14,9 +14,10 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <mapping package="org.jpwh.model"/>
-        <mapping class="org.jpwh.model.inheritance.tableperclass.BankAccount"/>
-        <mapping class="org.jpwh.model.inheritance.tableperclass.BillingDetails"/>
-        <mapping class="org.jpwh.model.inheritance.tableperclass.CreditCard"/>
+        <mapping class="org.jpwh.model.inheritance.associations.manytoone.User"/>
+        <mapping class="org.jpwh.model.inheritance.associations.manytoone.BankAccount"/>
+        <mapping class="org.jpwh.model.inheritance.associations.manytoone.CreditCard"/>
+        <mapping class="org.jpwh.model.inheritance.associations.manytoone.BillingDetails"/>
 
     </session-factory>
 </hibernate-configuration>
