@@ -5,10 +5,12 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.jpwh.model.inheritance.tableperclass.BankAccount;
+import org.jpwh.model.inheritance.tableperclass.BillingDetails;
 import org.jpwh.model.inheritance.tableperclass.CreditCard;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 
 public class HelloWorld {
@@ -32,7 +34,8 @@ public class HelloWorld {
 //            BankAccount bankAccount = new BankAccount("Owner","account","Sber","Swift");
 //            CreditCard creditCard = new CreditCard("Owner","1111 1111 1111 1111","09","1991");
             BankAccount bankAccount = new BankAccount();
-            CreditCard creditCard = new CreditCard();
+            CreditCard creditCard = new CreditCard(bankAccount.getOwner(),"111","09/09","2022");
+            List billingDetails = session.createQuery("select bd from BillingDetails bd").getResultList();
             session.persist(bankAccount);
             session.persist(creditCard);
 
