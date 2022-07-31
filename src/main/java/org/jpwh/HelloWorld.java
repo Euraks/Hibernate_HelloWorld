@@ -29,8 +29,8 @@ public class HelloWorld {
             Transaction tx = session.beginTransaction();
             Item item1 = new Item();
             Item item2 = new Item();
-            Map<String, String> images = new HashMap<String, String>();
-            Map<String, String> images1 = new HashMap<String, String>();
+            SortedMap<String, String> images = new TreeMap<>();
+            SortedMap<String, String> images1 = new TreeMap<>();
 
             images.put("1","A");
             images.put("2","B");
