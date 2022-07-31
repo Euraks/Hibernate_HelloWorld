@@ -7,9 +7,7 @@ import org.hibernate.cfg.Configuration;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 public class HelloWorld {
     public static void main(String[] args) {
@@ -31,14 +29,14 @@ public class HelloWorld {
             Transaction tx = session.beginTransaction();
             Item item1 = new Item();
             Item item2 = new Item();
-            List<String > list = new ArrayList<String>();
-            List<String> list1 = new ArrayList<>();
-            list.add("A");
-            list.add("B");
-            list1.add("C");
-            item1.setImages(list);
-            item2.setImages(list1);
+            Map<String, String> images = new HashMap<String, String>();
+            Map<String, String> images1 = new HashMap<String, String>();
 
+            images.put("1","A");
+            images.put("2","B");
+            images1.put("1","C");
+            item1.setImages(images);
+            item2.setImages(images1);
             session.persist(item1);
             session.persist(item2);
 

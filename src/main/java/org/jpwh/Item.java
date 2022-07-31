@@ -1,8 +1,8 @@
 package org.jpwh;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 @Entity
 public class Item {
@@ -13,19 +13,19 @@ public class Item {
 
     @ElementCollection
     @CollectionTable(name = "IMAGE")
-    @OrderColumn // Enables persistent order, Defaults to IMAGES_ORDER
-    @Column(name = "FILENAME")
-    protected List<String> images = new ArrayList<String>();
+    @MapKeyColumn(name = "FILENAME")
+    @Column(name = "IMAGENAME")
+    protected Map<String, String> images = new HashMap<String, String>();
 
     public Long getId() {
         return id;
     }
 
-    public List<String> getImages() {
+    public Map<String, String> getImages() {
         return images;
     }
 
-    public void setImages(List<String> images) {
+    public void setImages(Map<String, String> images) {
         this.images = images;
     }
 
