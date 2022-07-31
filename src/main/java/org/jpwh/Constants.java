@@ -1,4 +1,4 @@
-package org.jpwh.model;
+package org.jpwh;
 
 public interface Constants {
 

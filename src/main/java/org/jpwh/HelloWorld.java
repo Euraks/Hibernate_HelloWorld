@@ -4,13 +4,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-import org.jpwh.model.collections.setofstrings.Item;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
-import java.util.Set;
 
 public class HelloWorld {
     public static void main(String[] args) {
@@ -30,12 +29,18 @@ public class HelloWorld {
              Session session = sessionFactory.openSession()) {
             System.out.println("Ok");
             Transaction tx = session.beginTransaction();
-            Item item = new Item();
-            Set<String> stringSet = new HashSet<>();
-            stringSet.add("FirstImage");
-            stringSet.add("SecondString");
-            item.setImages(stringSet);
-            session.persist(item);
+            Item item1 = new Item();
+            Item item2 = new Item();
+            List<String > list = new ArrayList<String>();
+            List<String> list1 = new ArrayList<>();
+            list.add("A");
+            list.add("B");
+            list1.add("C");
+            item1.setImages(list);
+            item2.setImages(list1);
+
+            session.persist(item1);
+            session.persist(item2);
 
             tx.commit();
             System.out.println("+");

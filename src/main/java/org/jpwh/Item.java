@@ -1,6 +1,4 @@
-package org.jpwh.model.collections.listofstrings;
-
-import org.jpwh.model.Constants;
+package org.jpwh;
 
 import javax.persistence.*;
 import java.util.ArrayList;

@@ -13,7 +13,7 @@
         <property name="format_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">create</property>
 
-        <mapping package="org.jpwh.model"/>
-        <mapping class="org.jpwh.model.collections.setofstrings.Item"/>
+        <mapping package="org.jpwh"/>
+        <mapping class="org.jpwh.Item"/>
     </session-factory>
 </hibernate-configuration>
